@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.viapost.stock.service.DemandeLocalService" class="com.viapost.stock.service.impl.DemandeLocalServiceImpl" />
+	<bean id="com.viapost.stock.service.persistence.DemandePersistence" class="com.viapost.stock.service.persistence.DemandePersistenceImpl" parent="basePersistence" />
+	<bean id="com.viapost.stock.service.EtapeDemandeLocalService" class="com.viapost.stock.service.impl.EtapeDemandeLocalServiceImpl" />
+	<bean id="com.viapost.stock.service.persistence.EtapeDemandePersistence" class="com.viapost.stock.service.persistence.EtapeDemandePersistenceImpl" parent="basePersistence" />
+	<bean id="com.viapost.stock.service.ProductLocalService" class="com.viapost.stock.service.impl.ProductLocalServiceImpl" />
+	<bean id="com.viapost.stock.service.persistence.ProductPersistence" class="com.viapost.stock.service.persistence.ProductPersistenceImpl" parent="basePersistence" />
+	<bean id="com.viapost.stock.service.UserDemandeLocalService" class="com.viapost.stock.service.impl.UserDemandeLocalServiceImpl" />
+	<bean id="com.viapost.stock.service.persistence.UserDemandePersistence" class="com.viapost.stock.service.persistence.UserDemandePersistenceImpl" parent="basePersistence" />
+</beans>

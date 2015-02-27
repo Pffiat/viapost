@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.viapost.stock.model.Demande">
+		<field name="demandeId" type="long" />
+		<field name="question" type="String" />
+		<field name="request" type="String" />
+	</model>
+	<model name="com.viapost.stock.model.EtapeDemande">
+		<field name="etapeId" type="long" />
+		<field name="demandeId" type="long" />
+		<field name="decription" type="String" />
+		<field name="order" type="long" />
+	</model>
+	<model name="com.viapost.stock.model.Product">
+		<field name="stockId" type="long" />
+		<field name="articleNumber" type="long" />
+		<field name="stock" type="long" />
+		<field name="seuil_stock" type="long" />
+	</model>
+	<model name="com.viapost.stock.model.UserDemande">
+		<field name="userDemandeId" type="long" />
+		<field name="demandeId" type="long" />
+		<field name="userId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="date" type="Date" />
+		<field name="origine" type="String" />
+		<field name="article" type="long" />
+		<field name="resourcePrimaryKey" type="long" />
+		<field name="title" type="String" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusByDate" type="Date" />
+	</model>
+</model-hints>

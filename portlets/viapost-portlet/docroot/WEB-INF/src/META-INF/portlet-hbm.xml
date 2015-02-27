@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.viapost.stock.model.Demande" />
+	<import class="com.viapost.stock.model.EtapeDemande" />
+	<import class="com.viapost.stock.model.Product" />
+	<import class="com.viapost.stock.model.UserDemande" />
+	<class name="com.viapost.stock.model.impl.DemandeImpl" table="Viapost_Demande">
+		<cache usage="read-write" />
+		<id name="demandeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="question" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="request" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.viapost.stock.model.impl.EtapeDemandeImpl" table="Viapost_EtapeDemande">
+		<cache usage="read-write" />
+		<id name="etapeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="demandeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="decription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="order" type="com.liferay.portal.dao.orm.hibernate.LongType" column="order_" />
+	</class>
+	<class name="com.viapost.stock.model.impl.ProductImpl" table="Viapost_Product">
+		<cache usage="read-write" />
+		<id name="stockId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="articleNumber" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="stock" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="seuil_stock" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.viapost.stock.model.impl.UserDemandeImpl" table="Viapost_UserDemande">
+		<cache usage="read-write" />
+		<id name="userDemandeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="demandeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="date" type="org.hibernate.type.TimestampType" column="date_" />
+		<property name="origine" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="article" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="resourcePrimaryKey" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statusByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="statusByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="statusByDate" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

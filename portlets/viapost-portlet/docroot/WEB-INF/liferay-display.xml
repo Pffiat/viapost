@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.2.0//EN" "http://www.liferay.com/dtd/liferay-display_6_2_0.dtd">
+
+<display>
+	<category name="Viapost">
+		<portlet id="create-product"></portlet>
+		<portlet id="display-stock"></portlet>
+		<portlet id="facture"></portlet>
+		<portlet id="create-demande"></portlet>
+		<portlet id="mes-demandes"></portlet>
+	</category>
+</display>

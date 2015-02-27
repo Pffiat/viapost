@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.viapost.stock">
+	<author>pif</author>
+	<namespace>Viapost</namespace>
+
+	<entity name="Product" local-service="true" remote-service="false">
+		<column name="stockId" type="long" primary="true" />
+		<column name="articleNumber" type="long"  />
+		<column name="stock" type="long" />
+		<column name="seuil_stock" type="long" />
+	</entity>
+	
+	<entity name="Demande" local-service="true" remote-service="false">
+		<column name="demandeId" type="long" primary="true" />
+		<column name="question" type="String" />
+		<column name="request" type="String" />
+		<finder return-type="long" name="Question">
+			<finder-column name="question"/>
+		</finder>
+	</entity>
+	
+	<entity name="EtapeDemande" local-service="true" remote-service="false">
+		<column name="etapeId" type="long" primary="true" />
+		<column name="demandeId" type="long" />
+		<column name="decription" type="String" />
+		<column name="order" type="long" />
+		<order by="asc">
+			<order-column name="order" />
+		</order>
+		<finder return-type="Collection" name="DemandeId">
+			<finder-column name="demandeId" />
+		</finder>
+	</entity>
+	
+	<entity name="UserDemande" local-service="true" remote-service="false">
+		<column name="userDemandeId" type="long" primary="true" />
+		<column name="demandeId" type="long"/>
+		<column name="userId" type="long" />
+        <column name="companyId" type="long" />
+        <column name="groupId" type="long" />
+		<column name="date" type="Date" />
+		<column name="origine" type="String" />
+		<column name="article" type="long" />
+		
+		
+		<column name="resourcePrimaryKey" type="long"/>
+		<column name="title" type="String" />
+		<column name="status" type="int" />
+		<column name="statusByUserId" type="long" />
+		<column name="statusByUserName" type="String" />
+		<column name="statusByDate" type="Date" />
+		
+		<finder return-type="Collection" name="UserId">
+			<finder-column name="userId"/>
+		</finder>
+		<finder return-type="Collection" name="ResourceAndStatus">
+			<finder-column name="resourcePrimaryKey"/>
+			<finder-column name="status"/>
+		</finder>
+		<reference package-path="com.liferay.portal" entity="WorkflowInstanceLink"/>
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry"/>
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivity"/>
+	</entity>
+</service-builder>

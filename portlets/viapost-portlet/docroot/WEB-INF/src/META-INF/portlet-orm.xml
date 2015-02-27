@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.viapost.stock.model.impl.DemandeModelImpl">
+		<attributes>
+			<id name="demandeId" />
+			<basic name="question" />
+			<basic name="request" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viapost.stock.model.impl.EtapeDemandeModelImpl">
+		<attributes>
+			<id name="etapeId" />
+			<basic name="demandeId" />
+			<basic name="decription" />
+			<basic name="order">
+				<column name="ORDER_" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viapost.stock.model.impl.ProductModelImpl">
+		<attributes>
+			<id name="stockId" />
+			<basic name="articleNumber" />
+			<basic name="stock" />
+			<basic name="seuil_stock" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.viapost.stock.model.impl.UserDemandeModelImpl">
+		<attributes>
+			<id name="userDemandeId" />
+			<basic name="demandeId" />
+			<basic name="userId" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="date">
+				<column name="DATE_" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="origine" />
+			<basic name="article" />
+			<basic name="resourcePrimaryKey" />
+			<basic name="title" />
+			<basic name="status" />
+			<basic name="statusByUserId" />
+			<basic name="statusByUserName" />
+			<basic name="statusByDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="statusByUserUuid" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.viapost.stock.model.impl.DemandeImpl" name="Demande">
+		<table name="Viapost_Demande" />
+		<attributes />
+	</entity>
+	<entity class="com.viapost.stock.model.impl.EtapeDemandeImpl" name="EtapeDemande">
+		<table name="Viapost_EtapeDemande" />
+		<attributes />
+	</entity>
+	<entity class="com.viapost.stock.model.impl.ProductImpl" name="Product">
+		<table name="Viapost_Product" />
+		<attributes />
+	</entity>
+	<entity class="com.viapost.stock.model.impl.UserDemandeImpl" name="UserDemande">
+		<table name="Viapost_UserDemande" />
+		<attributes />
+	</entity>
+</entity-mappings>

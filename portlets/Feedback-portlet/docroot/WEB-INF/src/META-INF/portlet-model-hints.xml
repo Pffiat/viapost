@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<hint-collection name="CLOB">
+		<hint name="max-length">2000000</hint>
+	</hint-collection>
+	<model name="com.meera.db.model.Feedback">
+		<field name="uuid" type="String" />
+		<field name="feedbackId" type="long" />
+		<field name="feedbackDate" type="Date" />
+		<field name="feedbackText" type="String">
+			<hint-collection name="CLOB" />
+		</field>
+		<field name="feedbackSubject" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+</model-hints>
